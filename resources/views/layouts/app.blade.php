@@ -29,6 +29,7 @@
     @include("layouts.components.navbar")
 
     @yield("content")
+    @include("layouts.components.hero")
 
     @include("layouts.components.footer")
 
