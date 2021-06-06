@@ -28,3 +28,7 @@ Route::get('/register', function () {
 Route::get('/services', function () {
     return view('pages.services.index');
 });
+
+Route::get('/order', function () {
+    return view('pages.order.index');
+});

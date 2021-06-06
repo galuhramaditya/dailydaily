@@ -28,6 +28,10 @@
             font-size: 24px;
         }
 
+        .fs-20{
+            font-size : 20px;
+        }
+
         .fs-15 {
             font-size: 16px;
         }
@@ -68,8 +72,8 @@
         }
 
         .icon-order .card {
-            width: 100px;
-            height: 100px;
+            width: 90px;
+            height: 90px;
         }
 
         .card {
@@ -79,12 +83,21 @@
 
         .pagination-active {
             border-bottom: 3px #00C46F solid;
-color: #00C46F;
+            color: #00C46F;
+        }
+
+        .dropdown-item:hover{
+            background-color : #00C46F;
         }
 
         .page-link{
             border: none;
             color : #8C8C8C;
+        }
+
+        .order .card{
+            box-shadow : none;
+            border : none;
         }
 
     </style>
