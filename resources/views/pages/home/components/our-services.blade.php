@@ -1,9 +1,9 @@
 <div>
-    <div class="d-flex flex-column justify-content-around container" style="margin-bottom : 30vh">
+    <div class="d-flex flex-column justify-content-around container" style="margin-bottom : 20vh">
         <div class="mx-auto text-center w-75">
-            <h1 style="font-size: 45px;
+            <h1 class="fs-45
 " class="fw-bold">OUR SERVICES</h1>
-            <P style="font-size: 25px;
+            <P class="fs-30
 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam corrupti illo voluptatem! Mollitia a,
                 animi unde totam dolorem reiciendis necessitatibus, eligendi quaerat voluptas deserunt voluptatem nihil
                 rem quas nesciunt magni?</P>

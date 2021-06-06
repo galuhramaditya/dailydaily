@@ -24,28 +24,24 @@
             border-bottom: 3px #00C46F solid;
         }
 
-        .title-hero {
-            z-index: 99;
-        }
-
         .fs-30 {
-            font-size: 30px;
+            font-size: 24px;
         }
 
         .fs-15 {
-            font-size: 15px;
+            font-size: 16px;
         }
 
         .fs-45 {
-            font-size: 45px;
+            font-size: 36px;
         }
 
-        .continue-button{
-            transform : translate(-0,50%);
+        .continue-button {
+            transform: translate(-20%, 35%);
         }
 
-        .order-services{
-            transform : translate(0,-50%)
+        .order-services {
+            transform: translate(0, -50%)
         }
 
         .hero {
@@ -55,12 +51,13 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
-         .vertical-line{
-        display: inline-block;
-        border-left: 3px solid #ccc;
-   
-        height: 125px;
-    }
+
+        .vertical-line {
+            display: inline-block;
+            border-left: 3px solid #ccc;
+
+            height: 125px;
+        }
 
         .sub-hero {
             margin: 0 0 15em 5em;
@@ -71,11 +68,24 @@
         }
 
         .icon-order .card {
-            width: 118px;
-            height: 118px;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            width: 100px;
+            height: 100px;
         }
 
+        .card {
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        }
+
+        .pagination-active {
+            border-bottom: 3px #00C46F solid;
+color: #00C46F;
+        }
+
+        .page-link{
+            border: none;
+            color : #8C8C8C;
+        }
 
     </style>
 </head>
@@ -84,7 +94,7 @@
     @include("layouts.components.navbar")
 
     @yield("content")
-    
+
     @include("layouts.components.footer")
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"

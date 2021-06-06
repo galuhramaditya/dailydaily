@@ -9,12 +9,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">
+                    <a class="nav-link active" aria-current="page" href="/">
                         <span>Home</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">
+                    <a class="nav-link" aria-current="page" href="/services">
                         <span>Services</span>
                     </a>
                 </li>
@@ -40,8 +40,11 @@
                     <a class="nav-link " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="img/avatar.jpeg" style="border-radius: 50px;" alt="" width="40px">
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown" style="background-color : #00C46F; border-radius: 15px">
+                        <li><a class="dropdown-item text-white" href="#">Profile</a></li>
+                        <li><a class="dropdown-item text-white" href="#">Order History</a></li>
+                        <li><a class="dropdown-item text-white" href="#">Settings</a></li>
+                        <li><a class="dropdown-item text-white" href="#">Logout</a></li>
                     </ul>
                 </li>
             </ul>
