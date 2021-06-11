@@ -1,7 +1,8 @@
 @extends("layouts.auth")
 
 @section("content")
-<form action="" class="container w-50">
+<form action="{{ url('user/login') }}" method="post" class="container w-50">
+    @csrf
     <div class="row mb-5">
         <div class="col">
             <img src="img/logo.png" alt="logo" width="100">
@@ -17,12 +18,12 @@
     </div>
     <div class="row my-3">
         <div class="col form-group">
-            <input type="email" class="form-control" placeholder="Email address">
+            <input type="email" name="email" class="form-control" placeholder="Email address">
         </div>
     </div>
     <div class="row my-3">
         <div class="col form-group">
-            <input type="password" class="form-control" placeholder="Password">
+            <input type="password" name="password" class="form-control" placeholder="Password">
         </div>
     </div>
     <div class="row my-3">

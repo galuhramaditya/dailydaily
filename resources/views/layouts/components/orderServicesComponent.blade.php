@@ -93,13 +93,13 @@
             style="border-radius : 15px">
             <div>
                 <h6 class="fs-15">BOOKING DATE</h6>
-                <input class="fw-bold fs-30 " type="date" style="border-color : none; border: none">
+                <input class="fw-bold fs-30 " name="date" required type="date" style="border-color : none; border: none" value="{{ $date ?? null }}">
 
             </div>
             <span class="vertical-line"></span>
             <div>
                 <h6 class="fs-15">Time</h6>
-                <input class="fw-bold fs-30 " style="border-color : none; border: none" type="time">
+                <input class="fw-bold fs-30 " name="time" required style="border-color : none; border: none" type="time" value="{{ $time ?? null }}">
             </div>
         </div>
     </div>

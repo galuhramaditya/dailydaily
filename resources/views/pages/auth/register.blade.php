@@ -1,7 +1,8 @@
 @extends("layouts.auth")
 
 @section("content")
-<form action="" class="container w-50">
+<form action="{{ url('user/register') }}" method="post" class="container w-50">
+    @csrf
     <div class="row mb-5">
         <div class="col">
             <img src="img/logo.png" alt="logo" width="100">
@@ -15,23 +16,23 @@
     <div class="row my-3">
         <div class="col">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="First name">
+                <input type="text" class="form-control" required name="first_name" placeholder="First name">
             </div>
         </div>
         <div class="col">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Last name">
+                <input type="text" class="form-control" required name="last_name" placeholder="Last name">
             </div>
         </div>
     </div>
     <div class="row my-3">
         <div class="col form-group">
-            <input type="email" class="form-control" placeholder="Email address">
+            <input type="email" class="form-control" required name="email" placeholder="Email address">
         </div>
     </div>
     <div class="row my-3">
         <div class="col form-group">
-            <input type="password" class="form-control" placeholder="Password">
+            <input type="password" class="form-control" required name="password" placeholder="Password">
         </div>
     </div>
     <div class="row my-3">

@@ -21,8 +21,8 @@
                 </div>
 
                 <div class="ms-3 align-bottom">
-                    <span class="fs-15 fw-bold">All Room</span>
-                    <h6 class="fs-15">ID19123192</h6>
+                    <span class="fs-15 fw-bold">{{ ucwords($order->service->name) }}</span>
+                    <h6 class="fs-15">ID{{$order->id}}</h6>
                 </div>
                 <div class="float-right ms-auto"><svg width="30" height="30" viewBox="0 0 43 42" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -39,7 +39,7 @@
                             <h1 class="fs-30">Cleaner</h1>
                         </div>
                         <div class="d-flex justify-content-around align-items-center py-3" style="background: #F7F7F7; border-radius: 19px;">
-                            <img src="img/avatar.jpeg" style="width : 80px; height:80px; border-radius: 15px;" alt="">
+                            <img src="/img/avatar.jpeg" style="width : 80px; height:80px; border-radius: 15px;" alt="">
                             <div>
                                 <h3 class="fs-15">Michael</h3>
                                 <h3 class="fs-15">08127319912</h3>
@@ -68,7 +68,7 @@
                                         d="M20.979 0C9.387 0 0 9.632 0 21.5C0 33.368 9.387 43 20.979 43C32.592 43 42 33.368 42 21.5C42 9.632 32.592 0 20.979 0ZM21 38.7C11.718 38.7 4.2 31.003 4.2 21.5C4.2 11.997 11.718 4.3 21 4.3C30.282 4.3 37.8 11.997 37.8 21.5C37.8 31.003 30.282 38.7 21 38.7ZM22.05 10.75H18.9V23.65L29.925 30.4225L31.5 27.778L22.05 22.0375V10.75Z"
                                         fill="black" />
                                 </svg>
-                                <span class="fs-20 ms-3">10.00</span>
+                                <span class="fs-20 ms-3">{{ date("H.i", strtotime($order->time)) }}</span>
                             </div>
                             <div class="d-flex align-items-center ms-3">
                                 <svg width="32" height="32" viewBox="0 0 40 46" fill="none"
@@ -79,7 +79,7 @@
                                 </svg>
 
 
-                                <span class="fs-20 ms-3">Saturday, 21 May 2021</span>
+                                <span class="fs-20 ms-3">{{ date("l, d F Y", strtotime($order->date)) }}</span>
                             </div>
                         </div>
                     </div>
@@ -92,19 +92,19 @@
             <div class="mx-auto" style="background: #F7F7F7; border-radius: 28px; ">
             <div class="p-5">
                 <div class="d-flex justify-content-between border-bottom border-dark my-4">
-                    <span class="fs-20 ms-4">All Room</span> <span class="fs-20 me-4">200.000</span>
+                    <span class="fs-20 ms-4">{{ ucwords($order->service->name) }}</span> <span class="fs-20 me-4">{{ number_format($order->service->main_fee, 0, ",", ".") }}</span>
                 </div>
                  <div class="d-flex justify-content-between border-bottom border-dark my-4">
-                    <span class="fs-20 ms-4">Cleaner Fee</span> <span class="fs-20 me-4">25.000</span>
+                    <span class="fs-20 ms-4">Cleaner Fee</span> <span class="fs-20 me-4">{{ number_format($order->service->cleaner_fee, 0, ",", ".") }}</span>
                 </div>
                  <div class="d-flex justify-content-between border-bottom border-dark my-4">
-                    <span class="fs-20 ms-4">Cleaner Tools</span> <span class="fs-20 me-4">15.000</span>
+                    <span class="fs-20 ms-4">Cleaner Tools</span> <span class="fs-20 me-4">{{ number_format($order->service->cleaner_tools, 0, ",", ".") }}</span>
                 </div>
                  <div class="d-flex justify-content-between my-4">
-                    <span class="fs-20 ms-4">Total</span> <span class="fs-20 me-4">240.000</span>
+                    <span class="fs-20 ms-4">Total</span> <span class="fs-20 me-4">{{ number_format($order->service->main_fee + $order->service->cleaner_fee + $order->service->cleaner_tools, 0, ",", ".") }}</span>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <button class="btn w-100 fs-30 py-2" style="border-radius: 15px ;background: #FF0000; color:white;">Cancel Order</button>
+                    <a href="{{ url('order/cancel/'.$order->id) }}" class="btn w-100 fs-30 py-2" style="border-radius: 15px ;background: #FF0000; color:white;">Cancel Order</a>
                 </div>
             </div>
         </div>

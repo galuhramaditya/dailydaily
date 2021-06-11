@@ -42,7 +42,7 @@
                     <span class="fs-20 ms-4">Total</span> <span class="fs-20 me-4">240.000</span>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <button class="btn w-100 fs-30 py-2" style="border-radius: 15px ;background: #00C46F; color:white;">Order</button>
+                    <button class="btn w-100 fs-30 py-2" type="submit" style="border-radius: 15px ;background: #00C46F; color:white;">Order</button>
                 </div>
             </div>
         </div></div>

@@ -1,10 +1,11 @@
 <div>
-    <div class="container bg-white border border-dark p-4 position-relative order-services"
-        style="border-radius: 30px; box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25); padding-bottom : 3em !important; padding-right: 3em !important;padding-left: 3em !important">
+    <form action="/order" method="get" class="container bg-white border border-dark p-4 position-relative order-services"
+        @csrf
+        <style="border-radius: 30px; box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25); padding-bottom : 3em !important; padding-right: 3em !important;padding-left: 3em !important">
         @include("layouts.components.orderServicesComponent")
         <div class="d-flex justify-content-end align-self-end ">
             <div class="position-absolute continue-button">
-                <button class="btn btn-succes text-white px-4 py-2 fs-30"
+                <button  type="submit" class="btn btn-succes text-white px-4 py-2 fs-30"
                     style="background-color : #00C46F; border-radius : 14px">Continue Order
                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -14,5 +15,5 @@
                 </button>
             </div>
         </div>
-    </div>
+    </form>
 </div>
