@@ -13,11 +13,11 @@
         <div class="my-5">
             <div class="row d-flex justify-content-around align-items-center">
 
-                <div class="col-4 d-flex justify-content-center align-items-center p-2 border border-dark" style="border-radius: 15px;
+                <div onclick="activeClassPayment(`cash`)" class="col-4 d-flex justify-content-center align-items-center p-2 border border-dark cash pointer" style="border-radius: 15px;
 ">
                     <h1 class="fs-30">Cash</h1>
                 </div>
-                <div class="col-4 d-flex justify-content-center align-items-center p-2 border border-dark" style="border-radius: 15px;
+                <div  onclick="activeClassPayment(`bank`)" class="col-4 d-flex justify-content-center align-items-center p-2 border border-dark bank pointer" style="border-radius: 15px;
 ">
                     <h1 class="fs-30">Bank Transfer</h1>
                 </div>
