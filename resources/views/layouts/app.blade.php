@@ -113,9 +113,16 @@
         .active-payment {
             background-color: #00C46F;
         }
-        .pointer{
-            cursor : pointer;
+
+        .pointer {
+            cursor: pointer;
         }
+
+        .payment 
+        input, .icon-order input {
+            display: none;
+        }
+
     </style>
 </head>
 
@@ -134,9 +141,7 @@
             const arr = ["home", "bedroom", "bathroom", "living", "kitchen", "yard", "garage", "warehouse"]
             for (let i = 0; i < arr.length; i++) {
                 if (arr[i] === params) {
-                    console.log(params)
                     let nowParams = document.querySelector(`.${params}-icon`)
-                    console.log(nowParams)
                     nowParams.classList.toggle('active-order')
                 } else {
                     let remove = document.querySelector(`.${arr[i]}-icon`)
@@ -144,9 +149,6 @@
                 }
             }
         }
-
-
-
         function activeClassPayment(params) {
             const cash = document.querySelector('.cash')
             const bank = document.querySelector('.bank')
