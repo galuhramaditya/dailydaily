@@ -29,8 +29,9 @@ class ViewController extends Controller
     }
 
     function history(Request $request) {
-        $orders = Order::where(["user_id" => Auth::id()])->get();
-        return view('pages.history.index', ["orders" => $orders]);
+        $on_going_orders = Order::where(["user_id" => Auth::id(), "is_done" => false])->get();
+        $history_orders = Order::where(["user_id" => Auth::id(), "is_done" => true])->get();
+        return view('pages.history.index', ["on_going_orders" => $on_going_orders, "history_orders" => $history_orders]);
     }
 
     function orderDetail(Request $request, $id) {

@@ -32,7 +32,7 @@
 
             <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item d-flex me-2">
-                    <a class="nav-link" style="align-self: center;" aria-current="page" href="#">
+                    <a class="nav-link" style="align-self: center;" aria-current="page" href="/history">
                         <span>My order</span>
                     </a>
                 </li>

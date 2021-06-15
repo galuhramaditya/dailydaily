@@ -35,4 +35,5 @@ Route::group(["prefix" => "user"], function() {
 Route::group(["prefix" => "order"], function() {
     Route::post("/booking", [OrderController::class, "booking"]);
     Route::get("/cancel/{id}", [OrderController::class, "cancel"]);
+    Route::get("/finish/{id}", [OrderController::class, "finish"]);
 });

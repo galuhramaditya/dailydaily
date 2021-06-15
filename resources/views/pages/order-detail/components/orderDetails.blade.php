@@ -13,23 +13,14 @@
             </div>
             <div class="d-flex align-items-center px-5 py-4" style="border-radius: 19px; background: #F7F7F7;">
 
-                <div><svg width="50" height="50" viewBox="0 0 90 79" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M76.2542 29.2559V4.83525H62.8345V16.8181L44.9437 0.225403L0.216797 41.7005H13.6365V78.5657H35.9983V50.9168H53.8891V78.5657H76.2542V41.7005H89.6739L76.2542 29.2559ZM35.9983 32.474C35.9983 30.0297 36.9408 27.6855 38.6184 25.9571C40.296 24.2287 42.5713 23.2577 44.9437 23.2577C47.3162 23.2577 49.5915 24.2287 51.2691 25.9571C52.9466 27.6855 53.8891 30.0297 53.8891 32.474H35.9983Z"
-                            fill="#00C46F" />
-                    </svg>
-                </div>
+                <div>{!! $order->service->icon !!}</div>
 
                 <div class="ms-3 align-bottom">
                     <span class="fs-15 fw-bold">{{ ucwords($order->service->name) }}</span>
                     <h6 class="fs-15">ID{{$order->id}}</h6>
                 </div>
-                <div class="float-right ms-auto"><svg width="30" height="30" viewBox="0 0 43 42" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M2.75951 23.7659H33.5832L20.1168 37.2634C19.0406 38.3421 19.0406 40.1123 20.1168 41.191C21.193 42.2697 22.9315 42.2697 24.0077 41.191L42.1928 22.9638C43.2691 21.8851 43.2691 20.1426 42.1928 19.0639L24.0353 0.809022C22.9591 -0.269674 21.2206 -0.269674 20.1444 0.809022C19.0682 1.88772 19.0682 3.63023 20.1444 4.70892L33.5832 18.2341H2.75951C1.24178 18.2341 0 19.4788 0 21C0 22.5212 1.24178 23.7659 2.75951 23.7659Z"
-                            fill="#00C46F" />
-                    </svg>
+                <div class="float-right ms-auto">
+                    Payment Method : <b>{{ strtoupper($order->payment_method) }}</b>
                 </div>
             </div>
             <div>
@@ -39,10 +30,10 @@
                             <h1 class="fs-30">Cleaner</h1>
                         </div>
                         <div class="d-flex justify-content-around align-items-center py-3" style="background: #F7F7F7; border-radius: 19px;">
-                            <img src="/img/avatar.jpeg" style="width : 80px; height:80px; border-radius: 15px;" alt="">
+                            <img src="{{ $order->cleaner->photo }}" style="width : 80px; height:80px; border-radius: 15px;" alt="">
                             <div>
-                                <h3 class="fs-15">Michael</h3>
-                                <h3 class="fs-15">08127319912</h3>
+                                <h3 class="fs-15">{{ ucwords($order->cleaner->name) }}</h3>
+                                <h3 class="fs-15">{{ $order->phone }}</h3>
                             </div>
                             <div class="d-flex align-items-center">
                                 <svg width="20" height="20" viewBox="0 0 31 29" fill="none"
@@ -51,7 +42,7 @@
                                         d="M15.5175 23.187L24.5383 28.6283L22.1438 18.3735L30.1046 11.4673L19.6089 10.5778L15.5175 0.91748L11.4156 10.5862L0.919922 11.4757L8.88071 18.3819L6.48619 28.6366L15.5175 23.187Z"
                                         fill="#FFAA00" />
                                 </svg>
-                                <span style="color : #FFAA00;">4.6</span>
+                                <span style="color : #FFAA00;">{{ $order->cleaner->rating }}</span>
                             </div>
                         </div>
                     </div>
@@ -92,20 +83,23 @@
             <div class="mx-auto" style="background: #F7F7F7; border-radius: 28px; ">
             <div class="p-5">
                 <div class="d-flex justify-content-between border-bottom border-dark my-4">
-                    <span class="fs-20 ms-4">{{ ucwords($order->service->name) }}</span> <span class="fs-20 me-4">{{ number_format($order->service->main_fee, 0, ",", ".") }}</span>
+                    <span class="fs-20 ms-4">Main Fee</span> <span class="fs-20 me-4">{{ number_format($order->service->fee, 0, ",", ".") }}</span>
                 </div>
                  <div class="d-flex justify-content-between border-bottom border-dark my-4">
-                    <span class="fs-20 ms-4">Cleaner Fee</span> <span class="fs-20 me-4">{{ number_format($order->service->cleaner_fee, 0, ",", ".") }}</span>
+                    <span class="fs-20 ms-4">Cleaner Fee</span> <span class="fs-20 me-4">{{ number_format($order->cleaner->fee, 0, ",", ".") }}</span>
                 </div>
                  <div class="d-flex justify-content-between border-bottom border-dark my-4">
-                    <span class="fs-20 ms-4">Cleaner Tools</span> <span class="fs-20 me-4">{{ number_format($order->service->cleaner_tools, 0, ",", ".") }}</span>
+                    <span class="fs-20 ms-4">Cleaner Tools</span> <span class="fs-20 me-4">{{ number_format($order->service->tools, 0, ",", ".") }}</span>
                 </div>
                  <div class="d-flex justify-content-between my-4">
-                    <span class="fs-20 ms-4">Total</span> <span class="fs-20 me-4">{{ number_format($order->service->main_fee + $order->service->cleaner_fee + $order->service->cleaner_tools, 0, ",", ".") }}</span>
+                    <span class="fs-20 ms-4">Total</span> <span class="fs-20 me-4">{{ number_format($order->service->fee + $order->cleaner->fee + $order->service->tools, 0, ",", ".") }}</span>
                 </div>
+                @if(!$order->is_done)
                 <div class="d-flex justify-content-center">
-                    <a href="{{ url('order/cancel/'.$order->id) }}" class="btn w-100 fs-30 py-2" style="border-radius: 15px ;background: #FF0000; color:white;">Cancel Order</a>
+                    <!-- <a href="{{ url('order/cancel/'.$order->id) }}" class="btn w-100 fs-30 py-2" style="border-radius: 15px ;background: #FF0000; color:white;">Cancel Order</a> -->
+                    <a href="{{ url('order/finish/'.$order->id) }}" class="btn w-100 fs-30 py-2" style="border-radius: 15px ;background: #FF0000; color:white;">Finish Order</a>
                 </div>
+                @endif
             </div>
         </div>
         </div>
