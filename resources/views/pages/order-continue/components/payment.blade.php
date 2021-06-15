@@ -25,18 +25,22 @@
                 <h1 class="text-center fs-30 fw-bold">Details</h1>
             </div>
             <div class="mx-auto" style="background: #F7F7F7; border-radius: 28px; ">
+                @php
+                $service_data = App\Models\Service::find($service_id);
+                $cleaner_data = App\Models\Cleaner::find($cleaner_id);
+                @endphp
                 <div class="p-5">
                     <div class="d-flex justify-content-between border-bottom border-dark my-4">
-                        <span class="fs-20 ms-4">Main Fee</span> <span class="fs-20 me-4">200.000</span>
+                        <span class="fs-20 ms-4">{{ ucwords($service_data->name) }}</span> <span class="fs-20 me-4">{{ number_format($service_data->fee, 0, ",", ".") }}</span>
                     </div>
                     <div class="d-flex justify-content-between border-bottom border-dark my-4">
-                        <span class="fs-20 ms-4">Cleaner Fee</span> <span class="fs-20 me-4">25.000</span>
+                        <span class="fs-20 ms-4">Cleaner Fee</span> <span class="fs-20 me-4">{{ number_format($cleaner_data->fee, 0, ",", ".") }}</span>
                     </div>
                     <div class="d-flex justify-content-between border-bottom border-dark my-4">
-                        <span class="fs-20 ms-4">Cleaner Tools</span> <span class="fs-20 me-4">15.000</span>
+                        <span class="fs-20 ms-4">Cleaner Tools</span> <span class="fs-20 me-4">{{ number_format($service_data->tools, 0, ",", ".") }}</span>
                     </div>
                     <div class="d-flex justify-content-between my-4">
-                        <span class="fs-20 ms-4">Total</span> <span class="fs-20 me-4">240.000</span>
+                        <span class="fs-20 ms-4">Total</span> <span class="fs-20 me-4">{{ number_format($service_data->fee + $cleaner_data->fee + $service_data->tools, 0, ",", ".") }}</span>
                     </div>
                     <div class="d-flex justify-content-center">
                         <button class="btn w-100 fs-30 py-2" type="submit" style="border-radius: 15px ;background: #00C46F; color:white;">Order</button>

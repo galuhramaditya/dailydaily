@@ -140,12 +140,15 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
     <script>
+        const arr_service = <?= json_encode(App\Models\Service::pluck("short_name")); ?>;
+        const arr_cleaner = <?= json_encode(App\Models\Cleaner::pluck("name")); ?>;
+        
         function activeClass(params) {
             const arr = ["home", "bedroom", "bathroom", "living", "kitchen", "yard", "garage", "warehouse"]
             for (let i = 0; i < arr.length; i++) {
                 if (arr[i] === params) {
                     let nowParams = document.querySelector(`.${params}-icon`)
-                    nowParams.classList.toggle('active-order')
+                    nowParams.classList.add('active-order')
                 } else {
                     let remove = document.querySelector(`.${arr[i]}-icon`)
                     remove.classList.remove('active-order')
@@ -156,20 +159,20 @@
             const cash = document.querySelector('.cash')
             const bank = document.querySelector('.bank')
             if (params === 'bank') {
-                bank.classList.toggle('active-payment')
+                bank.classList.add('active-payment')
                 cash.classList.remove('active-payment')
             } else if (params === 'cash') {
-                cash.classList.toggle('active-payment')
+                cash.classList.add('active-payment')
                 bank.classList.remove('active-payment')
             }
         }
         function activeClassCleaner(params){
    
-            const arr = ["reza", "alex", "ramaditya", "jackson", "bobby"]
+            const arr = arr_cleaner
                for (let i = 0; i < arr.length; i++) {
                 if (arr[i] === params) {
                     let nowParams = document.querySelector(`.${params}`)
-                    nowParams.classList.toggle(`shadow`)
+                    nowParams.classList.add(`shadow`)
                 } else {
                     let remove = document.querySelector(`.${arr[i]}`)
                     remove.classList.remove(`shadow`)
